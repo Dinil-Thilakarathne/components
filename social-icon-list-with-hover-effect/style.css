@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;900&display=swap');
+:root{
+    --facebook-color:#1778F2;
+    --twitter-color:#1Da1f2;
+    --whatsapp-color:#25D366;
+    --youtube-color:#f00;
+    --container-shadow:2.3px 2.3px 1.9px rgba(0, 0, 0, 0.035),5.4px 5.4px 4.3px rgba(0, 0, 0, 0.048),9.7px 9.7px 7.7px rgba(0, 0, 0, 0.054),16.1px 16.1px 12.8px rgba(0, 0, 0, 0.057),26.5px 26.5px 21.2px rgba(0, 0, 0, 0.062),46.2px 46.2px 37px rgba(0, 0, 0, 0.073),100px 100px 80px rgba(0, 0, 0, 0.12);
+}
+
+*,
+::before,
+::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Poppins";
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-icon-list{
+    height: 100px;
+    width: 500px;
+    border: 1px solid #000;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: var(--container-shadow);
+}
+
+.icon-group{
+    height: 50px;
+    width: 60px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    transition: all 1s ease;
+
+}
+.icon-group:hover{
+    width: 200px;
+    justify-content: space-around;
+}
+.icon-group:nth-child(1) {
+    border: 2px solid var(--facebook-color);
+}
+.icon-group:nth-child(2) {
+    border: 2px solid var(--twitter-color);
+}
+
+.icon-group:nth-child(3) {
+    border: 2px solid var(--whatsapp-color);
+}
+
+.icon-group:nth-child(4) {
+    border: 2px solid var(--youtube-color);
+}
+
+.icon-group:hover i,
+.icon-group:hover .icon-text{
+    color: #fff;
+}
+
+.icon-group .icon-text{
+    width: 0;
+    overflow: hidden;
+}
+
+.icon-group:hover .icon-text{
+    width: fit-content;
+    transition: width 1s ease;
+}
+
+.icon-group i,
+.icon-group .icon-text{
+    z-index: 2;
+}
+
+.icon-group .icon-bg{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    clip-path: circle(50% at -100% 50%);
+    z-index: 1;
+}
+
+.icon-group:hover .icon-bg{
+    clip-path: circle(150% at 0% 50%);
+    transition: all 1s ease;
+}
+
+.icon-group:nth-child(1) .icon-bg{
+    background-color: var(--facebook-color);
+}
+.icon-group:nth-child(2) .icon-bg{
+    background-color:  var(--twitter-color);
+}
+
+.icon-group:nth-child(3) .icon-bg{
+    background-color:  var(--whatsapp-color);
+}
+
+.icon-group:nth-child(4) .icon-bg{
+    background-color:  var(--youtube-color);
+}
