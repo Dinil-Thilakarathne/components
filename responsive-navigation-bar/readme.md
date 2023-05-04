@@ -5,7 +5,7 @@
 
 # Demo 
 ## live Demo :
-- 
+-  [Click here](https://dinil-thilakarathne.github.io/components/responsive-navigation-bar/)
 
 ## Project Preview
 
