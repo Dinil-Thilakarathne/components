@@ -1,0 +1,113 @@
+:root{
+    --bg-color : #0D0C22;
+    --main-text-color: #fff;
+    --secondary-text-color: #A6A6A6;
+    --primary-color: #06D6A0;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    font-family: "poppins";
+}
+.section{
+    max-width: 1012px;
+    margin-inline: auto;
+}
+.grid{
+    display: grid;
+    grid-row-gap: 1rem;
+}
+footer{
+    padding: 20px;
+    width: 100%;
+    background-color: var(--bg-color);
+}
+.footer-top{
+    color: var(--main-text-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.social-icon-list{
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+.social-icon-list i:hover{
+    color: var(--primary-color);
+}
+.footer-bottom{
+    grid-template-columns: repeat(2, 1fr);
+}
+.contact-section{
+    color: var(--main-text-color);
+}
+.contact-description{
+    color: var(--secondary-text-color);
+}
+.submit-btn,
+.input-box{
+    padding: 10px 20px;
+    border-radius: .5rem;
+}
+.submit-btn{
+    background-color: var(--primary-color);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.tabs-section{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+}
+.tab{
+    display: flex;
+    flex-direction: column;
+    grid-row-gap: .5rem;
+}
+.tab-header{
+    color: var(--main-text-color);
+    pointer-events: none;
+}
+.tab-item{
+    color: var(--secondary-text-color);
+    cursor: pointer;
+}
+
+/* Small (SM) */
+@media (max-width: 767px) {
+    /* CSS rules for small screens */
+    .section{
+        max-width: 650px;
+    }
+    .footer-bottom{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .tabs-section{
+       display: grid;
+       grid-template-columns: repeat(2,1fr);
+    }
+}
+
+/* Extra Small (XS) */
+@media (max-width: 375px) {
+   /* CSS rules for extra small screens */
+   .section{
+    max-width: 350px;
+   }
+   .tabs-section{
+    display: grid;
+    /* grid-template-columns: repeat(1,1fr); */
+    text-align: center;
+   }
+}
+  
+
+  
