@@ -1,5 +1,5 @@
 :root{
-    --clr-bg: #14243d;
+    --clr-bg: #243859;
     --clr-card-bg : #0d192b;
     --clr-primary: #3fe8ab;
     --clr-card-text: #F6F6F6;
@@ -17,8 +17,10 @@ body{
     background-color: var(--clr-bg);
 }
 .pricing-cards {
+    min-height: inherit;
+    width: 100%;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
     gap: 30px;
     margin: auto;
@@ -34,8 +36,15 @@ body{
     text-align: center;
     flex: 1;
     max-width: 300px;
+    transition: transform .75s ease;
 }
-  
+.pricing-card:hover{
+    transform: translateY(-10px) scale(1.05);
+}
+.pricing-card.standard{
+    background-color: var(--clr-primary);
+    color: var(--clr-card-bg);
+}
 .pricing-card__title {
     font-size: 24px;
     margin-bottom: 15px;
@@ -67,15 +76,19 @@ body{
     text-decoration: none;
     transition: background-color 0.3s ease;
 }
-  
+.pricing-card.standard .pricing-card__button{
+    background-color: var(--clr-card-bg);
+    color: var(--clr-card-text);
+}
 .pricing-card__button:hover {
     background-color: #1aae96;
 }
-
+.pricing-card.standard .pricing-card__button:hover{
+    background-color: #243959;
+}
 @media (width < 768px) {
     .pricing-cards{
         flex-direction: column;
         align-items: center;
     }
-
 }

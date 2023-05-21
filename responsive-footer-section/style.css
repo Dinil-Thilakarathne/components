@@ -65,7 +65,8 @@ footer{
 
 .tabs-section{
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(3,1fr);
+    column-gap: 1rem;
 }
 .tab{
     display: flex;
@@ -81,6 +82,11 @@ footer{
     cursor: pointer;
 }
 
+.footer-copyright-section{
+    color: var(--secondary-text-color);
+    text-align: center;
+    padding-top: 1.5rem;
+}
 /* Small (SM) */
 @media (max-width: 767px) {
     /* CSS rules for small screens */
@@ -104,7 +110,7 @@ footer{
    }
    .tabs-section{
     display: grid;
-    /* grid-template-columns: repeat(1,1fr); */
+    grid-template-columns: repeat(1,1fr);
     text-align: center;
    }
 }

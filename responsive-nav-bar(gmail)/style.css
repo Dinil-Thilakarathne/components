@@ -1,0 +1,220 @@
+/*
+    fonts
+*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+/*
+    global variables
+*/
+:root {
+    /* colors  */
+    --theme-bg-color: rgba(16 18 27 / 40%);
+    --sidebar-bg-color: rgba(57, 61, 79, 0.4);
+    --border-color: rgba(113 119 144 / 50%);
+    --theme-color: #f9fafb;
+    --inactive-color: rgb(113 119 144 / 78%);
+    --content-bg-color: rgb(113 119 144 / 78%);
+    --button-bg: #4285f4;
+    --button-bg-hover: #669df6;
+
+    /* typography  */
+    --body-font: "Poppins", sans-serif;
+
+    /* font size  */
+    --fs-body:16px;
+    --fs-regular:1.1rem;
+
+}.light-mode {
+    /* colors  */
+    --theme-bg-color: rgb(255 255 255 / 31%);
+    --sidebar-bg-color: rgba(130, 128, 128, 0.31);
+    --theme-color: #3c3a3a;
+    --inactive-color: #f3d8d8;
+    --content-bg-color: #ababab;
+    --border-color: rgba(91, 93, 102, 0.75);
+}
+/*
+    base
+*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(img/bg-img.jpg);
+    background-size: cover;
+    font-family: var(--body-font);
+    font-size: var(--fs-body);
+}
+.flex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* contaienr  */
+.container{
+    height: 90vh;
+    min-height: 300px;
+    max-width: 1024px;
+    background-color: var(--theme-bg-color);
+    border: 4px solid var(--border-color);
+    border-radius: 1rem;
+    backdrop-filter: blur(20px);
+    position: relative;
+    justify-content: space-between;
+    margin-inline: 1rem;
+}
+/* side bar  */
+/* logo section  */
+.logo-section img{
+    padding-left: 1rem;
+}
+.logo-section .item-txt{
+    font-weight: bold;
+}
+
+/* menu & mode change icons  */
+.menu-icon,
+.mode-change-icon{
+    position: absolute;
+    right: 20px;
+    font-size: 2rem;
+    color: var(--theme-color);
+    cursor: pointer;
+    z-index: 9999;
+}
+.menu-icon{
+    top: 10px;
+}
+.mode-change-icon{
+    bottom: 10px;
+}
+/* side nav  */
+.side-nav{
+    height: 100%;
+    width: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    font-size: var(--fs-regular);
+    overflow: hidden;
+    transition: width .75s ease;
+    background-color: var(--sidebar-bg-color);
+}
+.side-nav.active{
+    width: 280px;
+}
+
+.side-nav > div{
+    width: 100%;
+    position: relative;
+}
+.divider{
+    content: '';
+    display: block;
+    position: absolute;
+    height: 5px;
+    width: 80%;
+    background-color: var(--border-color);
+}
+.compose-section .divider{
+    bottom: -20px;
+}
+.bottom-section{
+    width: 100%;
+    position: relative;
+}
+.bottom-section .divider{
+    top: -10px;
+    left: 10px;
+}
+.compose-btn{
+    padding: .5rem 1rem;
+    width: 90%;
+    border: none;
+    border-radius: .5rem;
+    background-color: var(--button-bg);
+    color: var(--theme-color);
+    font-size: var(--fs-regular);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.compose-btn:hover{
+    background-color: var(--button-bg-hover);
+}
+/* nav menu  */
+.nav{
+    width: 100%;
+    flex-direction: column !important;
+    overflow: hidden;
+}
+
+.nav-item{
+    width: 90%;
+    list-style-type: none;
+    color: var(--theme-color);
+    padding: .5rem 1rem;
+    padding-left: 1.5rem;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    cursor: pointer;
+}
+.nav-item:hover{
+    background-color: var(--inactive-color);
+}
+.item-txt{
+    visibility: hidden;
+    transition: visibility .5s ease;
+    transition-delay: .25s;
+    overflow: hidden;
+    color: var(--theme-color);
+    padding-left: 1rem;
+}
+.side-nav.active .item-txt{
+    visibility: visible;
+}
+/* secondary nav  */
+.secondary-nav{
+    visibility: hidden;
+    overflow: hidden;
+}
+.secondary-nav .item-txt{
+    display: none;
+}
+
+.secondary-nav.active{
+    visibility: visible;
+}
+
+.secondary-nav.active .item-txt{
+    display: inherit;
+}
+/* hero section  */
+.hero-section{
+    height: 100%;
+    width: fit-content;
+    padding-inline: 1rem;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+
+.hero-section .content{
+    background-color: var(--content-bg-color);
+    border: none;
+    border-radius: 1rem;
+    padding: .75rem .5rem;
+    color: var(--theme-color);
+}
